@@ -1,4 +1,8 @@
-﻿namespace PegaLadrao;
+﻿
+
+using Microsoft.Maui.Controls;
+
+namespace PegaLadrao;
 
 public partial class MainPage : ContentPage
 {
@@ -9,7 +13,6 @@ public partial class MainPage : ContentPage
 
 	private void ClicaeComeca(object sender, EventArgs args)
 	{
-		
+		Application.Current.MainPage = new PlayPage();
 	}
 }
-

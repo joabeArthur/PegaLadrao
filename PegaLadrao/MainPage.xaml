@@ -28,11 +28,11 @@
         <Label Text="Thief on the run"
                FontSize="37"
                FontAttributes="Bold"
-               FontFamily="KodeMono"
+               FontFamily="KodeMono-VariableFont_wght"
                TextColor="White"
                Grid.Row="1"
                Grid.ColumnSpan="3"
-               HorizontalOptions="Start"
+               HorizontalOptions="Center"
                VerticalOptions="Fill"
                />
 
@@ -48,6 +48,7 @@
                 Margin="10"
                 CornerRadius="30"
                 HorizontalOptions="Fill"/>
+
         <Button Text="sobre"
                 TextColor="White"
                 BackgroundColor="Purple"
