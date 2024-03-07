@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PegaLadrao.MainPage"
+             BackgroundColor="Red"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="detetive.jpg"
+               Aspect="AspectFill"
+               Margin="0,0,0,0"
+               Grid.RowSpan="5"
+               Grid.ColumnSpan="3"/>
+
+        <Label Text="Thief on the run"
+               FontSize="37"
+               FontAttributes="Bold"
+               FontFamily="KodeMono"
+               TextColor="White"
+               Grid.Row="1"
+               Grid.ColumnSpan="3"
+               HorizontalOptions="Start"
+               VerticalOptions="Fill"
+               />
+
+    
+
+        <Button Text="INICIAR?"
+                Clicked="ClicaeComeca"
+                TextColor="White"
+                BackgroundColor="Purple"
+                Grid.Row="3"
+                Grid.ColumnSpan="3"
+                Padding="3"
+                Margin="10"
+                CornerRadius="30"
+                HorizontalOptions="Fill"/>
+        <Button Text="sobre"
+                TextColor="White"
+                BackgroundColor="Purple"
+                Grid.Row="4"
+                Grid.ColumnSpan="3"
+                Padding="3"
+                Margin="10"
+                CornerRadius="30"
+                HorizontalOptions="Fill"/>
+
+    </Grid>
+
+</ContentPage>
