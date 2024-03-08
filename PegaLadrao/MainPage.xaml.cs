@@ -15,4 +15,8 @@ public partial class MainPage : ContentPage
 	{
 		Application.Current.MainPage = new PlayPage();
 	}
+
+	private void FrameOnClicked(object sender, EventArgs args){
+		FrameSobre.IsVisible = false;
+	}
 }

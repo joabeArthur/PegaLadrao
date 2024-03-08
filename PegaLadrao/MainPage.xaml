@@ -50,6 +50,7 @@
                 HorizontalOptions="Fill"/>
 
         <Button Text="sobre"
+                Clicked="FrameOnClicked"
                 TextColor="White"
                 BackgroundColor="Purple"
                 Grid.Row="4"
@@ -58,6 +59,43 @@
                 Margin="10"
                 CornerRadius="30"
                 HorizontalOptions="Fill"/>
+<!--========================================FRAME=======================================================================-->
+        <Frame x:Name="FrameSobre"
+               IsVisible="false"
+               Margin="10"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               BackgroundColor="Black">
+
+       
+             <Grid>
+                 <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                  </Grid.RowDefinitions>
+
+                    <Label Text="SOBRE"
+                           TextColor="White"
+                          FontSize="30"
+                           Grid.Row="0"
+                          HorizontalOptions="Center"/>
+
+                 <Label Text="oi"
+                        TextColor="Blue"
+                           Grid.Row="1"
+                          HorizontalOptions="Center"
+                         />
+                
+                 <Button Text="Voltar"
+                          TextColor="White"
+                           BackgroundColor="Red"
+                          FontSize="30"
+                          Margin="10"
+                          CornerRadius="20"/>
+              </Grid>  
+                 
+        </Frame>
 
     </Grid>
 
