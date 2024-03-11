@@ -17,6 +17,10 @@ public partial class MainPage : ContentPage
 	}
 
 	private void FrameOnClicked(object sender, EventArgs args){
+		FrameSobre.IsVisible = true;
+	}
+
+	private void FrameVoltar(object sender, EventArgs args){
 		FrameSobre.IsVisible = false;
 	}
 }

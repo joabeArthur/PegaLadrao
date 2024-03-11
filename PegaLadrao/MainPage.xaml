@@ -65,14 +65,17 @@
                Margin="10"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
-               BackgroundColor="Black">
+               BackgroundColor="Black"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="3"
+              >
 
        
              <Grid>
                  <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="100"/>
                   </Grid.RowDefinitions>
 
                     <Label Text="SOBRE"
@@ -81,16 +84,18 @@
                            Grid.Row="0"
                           HorizontalOptions="Center"/>
 
-                 <Label Text="oi"
-                        TextColor="Blue"
+                 <Label Text="Um mafioso e seus capangas estão escondidos e precisamos encontrá-los o mais rápido possível!!"
+                        TextColor="White"
                            Grid.Row="1"
                           HorizontalOptions="Center"
                          />
                 
                  <Button Text="Voltar"
+                         Clicked="FrameVoltar"
                           TextColor="White"
                            BackgroundColor="Red"
                           FontSize="30"
+                          Grid.Row="2"
                           Margin="10"
                           CornerRadius="20"/>
               </Grid>  

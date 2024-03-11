@@ -11,7 +11,7 @@ public partial class PlayPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void ClicaeComeca2(object sender, EventArgs args)
+	private void textoautomatico(object sender, EventArgs args)
 	{
 		
 	}
