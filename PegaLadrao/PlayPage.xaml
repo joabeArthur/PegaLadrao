@@ -23,19 +23,32 @@
         <Button Text="voltar"
                 BackgroundColor="Black"
                 Grid.Row="0"
-                Grid.Column="3"/>
+                Grid.Column="3"
+                Margin="10"/>
+
+        <Frame x:Name="TextoJogo"
+                BackgroundColor="Blue"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="3">
+        <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
         <Label BackgroundColor="Black"
                Grid.Row="0"
-               Grid.ColumnSpan="3"
                />
         
-        <Label Text="oi"
+        <Label x:Name="OTextoDoJogo"
+               Text="oi"
                FontSize="38"
                BackgroundColor="Grey"
-               Grid.Row="1"
-               Grid.ColumnSpan="3"
+               Grid.Row="1"               
                Margin="10"/>
+         </Grid>
+        </Frame>
 
         <Button Text="Opção0"
                 Grid.Row="2"
