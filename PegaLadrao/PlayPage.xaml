@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+<!--===========================================================================================================-->
         <Button Text="voltar"
                 BackgroundColor="Black"
                 Grid.Row="0"
@@ -49,24 +49,48 @@
                Margin="10"/>
          </Grid>
         </Frame>
+<!--===========================================================================================================-->
+        <Frame x:Name="frameperdeu"
+               Grid.RowSpan="2"
+               Grid.ColumnSpan="3"
+               BackgroundColor="red">
+          
+          <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-        <Button Text="Opção0"
+                <Label Text="CABO FI"
+                       BackgroundColor="purple"/>
+          </Grid>
+        </Frame>
+<!--===========================================================================================================-->
+        <Button x:Name="ButaofunfaProximo"
+                Text="Opção0"
+                Clicked="ClicaButao0"
                 Grid.Row="2"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
 
-        <Button Text="Opção1"
+        <Button x:Name="Butaofunfa1"
+                Clicked="ClicaButao1"
+                Text="Opção1"
                 Grid.Row="3"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
-        <Button Text="Opção2"
+        <Button x:Name="Butaofunfa2"
+                Text="Opção2"
+                Clicked="ClicaButao2"
                 Grid.Row="4"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
-        <Button Text="Opção3"
+        <Button x:Name="Butaofunfa3"
+                Text="Opção3"
+                Clicked="ClicaButao3"
                 Grid.Row="5"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
