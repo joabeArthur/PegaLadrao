@@ -10,14 +10,14 @@ public partial class PlayPage : ContentPage
 	public PlayPage()
 	{
 		InitializeComponent();
-
+//------------------------------------------------------------------------------------------------\\
 	historia.Add(new HistoriaTFR()
     {
       Id = 0,
       Texto = "caramba",
       Aresposta=false
     });
-
+//------------------------------------------------------------------------------------------------\\
 	void Iniciar()
   {
     TrocaHistoryStepAtual(0);
@@ -53,13 +53,21 @@ public partial class PlayPage : ContentPage
       ClicaButao3.IsVisible = false;
     }
   }
-
-  void frameperdeu()
+//------------------------------------------------------------------------------------------------\\
+  void FreameMorte()
   {
+    if (id == -100)
+    {
+      frameperdeu.IsVisible = true;
+    }
+    else
+    {
+      frameperdeu.IsVisible = false;
+    }
 
   }
 
-  //------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------\\
 
   void TrocaHistoryStepAtual(int id)
   {
@@ -67,7 +75,7 @@ public partial class PlayPage : ContentPage
     PreencherPagina();
   }
 
-  //------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------\\
 
   void ButaofunfaProximo(object sender, EventArgs args)
   {
@@ -75,28 +83,28 @@ public partial class PlayPage : ContentPage
     TrocaHistoryStepAtual(proximoId);
   }
 
-  //------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------\\
 
   void Butaofunfa1(object sender, EventArgs args)
   {
     TrocaHistoryStepAtual(historia.Resposta0);
   }
 
-  //------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------\\
 
   void Butaofunfa2(object sender, EventArgs args)
   {
     TrocaHistoryStepAtual(historia.Resposta1);
   }
 
-  //------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------\\
 
   void Butaofunfa3(object sender, EventArgs args)
   {
     TrocaHistoryStepAtual(historia.Resposta2);
   }
 
-  //------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------\\
   
 	}
 

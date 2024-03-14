@@ -52,6 +52,7 @@
 <!--===========================================================================================================-->
         <Frame x:Name="frameperdeu"
                Grid.RowSpan="2"
+               IsVisible="false"
                Grid.ColumnSpan="3"
                BackgroundColor="red">
           
