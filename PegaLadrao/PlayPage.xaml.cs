@@ -1,12 +1,14 @@
 
-
 using Microsoft.Maui.Controls;
 
 namespace PegaLadrao;
 
-List<HistoriaTFR> historia = new List<HistoriaTFR>();
+
 public partial class PlayPage : ContentPage
 {
+  List<HistoriaTFR> historia = new List<HistoriaTFR>();
+  HistoriaTFR historiaatual;
+
 	public PlayPage()
 	{
 		InitializeComponent();
@@ -17,6 +19,8 @@ public partial class PlayPage : ContentPage
       Texto = "caramba",
       Aresposta=false
     });
+
+    Iniciar();
 //------------------------------------------------------------------------------------------------\\
 	void Iniciar()
   {
@@ -27,23 +31,27 @@ public partial class PlayPage : ContentPage
 
   void PreencherPagina()
   {
-    labelTexto.Text = historia.Texto;
-
-    if (historia.JogadorF)
-      frameperdeu.IsVisible = true;
+    OTextoDoJogo.Text = historiaatual.Texto;
+    if (historiaatual.JogadorF)
+    {
+      frameperdeu.IsVisible=true;
+    }
     else
-      frameperdeu.IsVisible = false;
+    {
+      frameperdeuIsVisble=false;
+    }
 
-    if (historia.TemResposta)
+
+    if (historiaatual.TemResposta)
     {
       BotaoProximo.IsVisible = false;
       ClicaButao1.IsVisible = true;
       ClicaButao2.IsVisible = true;
       ClicaButao3.IsVisible = true;
 
-      ClicaButao1.Text = historia.TextoR0;
-      ClicaButao2.Text = historia.TextoR1;
-      ClicaButao3.Text = historia.TextoR2;
+      ClicaButao1.Text = historiaatual.TextoR0;
+      ClicaButao2.Text = historiaatual.TextoR1;
+      ClicaButao3.Text = historiaatual.TextoR2;
     }
     else
     {
@@ -54,24 +62,13 @@ public partial class PlayPage : ContentPage
     }
   }
 //------------------------------------------------------------------------------------------------\\
-  void FreameMorte()
-  {
-    if (id == -100)
-    {
-      frameperdeu.IsVisible = true;
-    }
-    else
-    {
-      frameperdeu.IsVisible = false;
-    }
-
-  }
+ 
 
 //------------------------------------------------------------------------------------------------\\
 
   void TrocaHistoryStepAtual(int id)
   {
-    historia = historia.Where(d => d.Id == id).First();
+    historiaatual = historia.Where(d=> d.Id == id).First();
     PreencherPagina();
   }
 
@@ -79,7 +76,7 @@ public partial class PlayPage : ContentPage
 
   void ButaofunfaProximo(object sender, EventArgs args)
   {
-    var proximoId = historia.Id + 1;
+    var proximoId = historiaatual.Id + 1;
     TrocaHistoryStepAtual(proximoId);
   }
 
@@ -87,28 +84,24 @@ public partial class PlayPage : ContentPage
 
   void Butaofunfa1(object sender, EventArgs args)
   {
-    TrocaHistoryStepAtual(historia.Resposta0);
+    TrocaHistoryStepAtual(historiaatual.Resposta0);
   }
 
 //------------------------------------------------------------------------------------------------\\
 
   void Butaofunfa2(object sender, EventArgs args)
   {
-    TrocaHistoryStepAtual(historia.Resposta1);
+    TrocaHistoryStepAtual(historiaatual.Resposta1);
   }
 
 //------------------------------------------------------------------------------------------------\\
 
   void Butaofunfa3(object sender, EventArgs args)
   {
-    TrocaHistoryStepAtual(historia.Resposta2);
+    TrocaHistoryStepAtual(historiaatual.Resposta2);
   }
 
 //------------------------------------------------------------------------------------------------\\
   
 	}
-
-	
-
-	
 }
