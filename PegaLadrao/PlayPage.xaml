@@ -68,8 +68,8 @@
         </Frame>
 <!--===========================================================================================================-->
         <Button x:Name="ButaofunfaProximo"
-                Text="Opção0"
-                Clicked="ClicaButao0"
+                
+                Clicked="clicanoproximo"
                 Grid.Row="2"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
@@ -77,20 +77,20 @@
 
         <Button x:Name="Butaofunfa1"
                 Clicked="ClicaButao1"
-                Text="Opção1"
+                
                 Grid.Row="3"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
         <Button x:Name="Butaofunfa2"
-                Text="Opção2"
+                
                 Clicked="ClicaButao2"
                 Grid.Row="4"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
         <Button x:Name="Butaofunfa3"
-                Text="Opção3"
+                
                 Clicked="ClicaButao3"
                 Grid.Row="5"
                 Grid.ColumnSpan="3"

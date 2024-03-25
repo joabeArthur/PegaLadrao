@@ -1,4 +1,5 @@
 
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.Maui.Controls;
 
 namespace PegaLadrao;
@@ -13,7 +14,7 @@ public partial class PlayPage : ContentPage
 	{
 		InitializeComponent();
 
-    Iniciar();
+    
 //------------------------------------------------------------------------------------------------\\
 	historia.Add(new HistoriaTFR()
     {
@@ -85,24 +86,23 @@ public partial class PlayPage : ContentPage
     {
       ButaofunfaProximo.IsVisible = true;
       Butaofunfa1.IsVisible = false;
-      
+      Butaofunfa2.IsVisible = false;
       Butaofunfa3.IsVisible = false;
 
       Butaofunfa1.Text = historiaatual.TextoR0;
-      
+      Butaofunfa2.Text = historiaatual.TextoR0;
       Butaofunfa3.Text = historiaatual.TextoR2;
     }
     else
     {
       ButaofunfaProximo.IsVisible = false;
       Butaofunfa1.IsVisible = true;
-      
+      Butaofunfa2.IsVisible = true;
       Butaofunfa3.IsVisible = true;
     }
   }
 //------------------------------------------------------------------------------------------------\\
- 
-
+    
 //------------------------------------------------------------------------------------------------\\
 
   void TrocaHistoryStepAtual(int id)
@@ -113,7 +113,7 @@ public partial class PlayPage : ContentPage
 
 //------------------------------------------------------------------------------------------------\\
 
-  void ClicaButao0(object sender, EventArgs args)
+  void clicanoproximo(object sender, EventArgs args)
   {
     var proximoId = historiaatual.Id + 1;
     TrocaHistoryStepAtual(proximoId);
@@ -140,6 +140,7 @@ public partial class PlayPage : ContentPage
     TrocaHistoryStepAtual(historiaatual.Resposta2);
   }
 
+  Iniciar();
 //------------------------------------------------------------------------------------------------\\
 	}
 }
