@@ -12,6 +12,8 @@ public partial class PlayPage : ContentPage
 	public PlayPage()
 	{
 		InitializeComponent();
+
+    Iniciar();
 //------------------------------------------------------------------------------------------------\\
 	historia.Add(new HistoriaTFR()
     {
@@ -20,7 +22,44 @@ public partial class PlayPage : ContentPage
       Aresposta=false
     });
 
-    Iniciar();
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 1,
+      Texto = "caramjiiniba",
+      TextoR0 = "jorijv khbnvk",
+      TextoR1 = "jorgtrh6j7kmnyhtbt6k8khbnvk",
+      TextoR2 = "johgfrtfdxesdfcxszesrdtf",
+
+      Resposta0 = 10000,
+      Resposta1 = 1999,
+      Resposta2 = 20000,
+
+      Aresposta=true
+    });
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 10000,
+      JogadorF = true,
+
+      Aresposta=false
+    });
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 1999,
+      JogadorF = true,
+
+      Aresposta=false
+    });
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 20000,
+      JogadorF = true,
+
+      Aresposta=false
+    });
+
 //------------------------------------------------------------------------------------------------\\
 	void Iniciar()
   {
@@ -38,27 +77,27 @@ public partial class PlayPage : ContentPage
     }
     else
     {
-      frameperdeuIsVisble=false;
+      frameperdeu.IsVisible=false;
     }
 
 
-    if (historiaatual.TemResposta)
+    if (historiaatual.Aresposta)
     {
-      BotaoProximo.IsVisible = false;
-      ClicaButao1.IsVisible = true;
-      ClicaButao2.IsVisible = true;
-      ClicaButao3.IsVisible = true;
+      ButaofunfaProximo.IsVisible = true;
+      Butaofunfa1.IsVisible = false;
+      
+      Butaofunfa3.IsVisible = false;
 
-      ClicaButao1.Text = historiaatual.TextoR0;
-      ClicaButao2.Text = historiaatual.TextoR1;
-      ClicaButao3.Text = historiaatual.TextoR2;
+      Butaofunfa1.Text = historiaatual.TextoR0;
+      
+      Butaofunfa3.Text = historiaatual.TextoR2;
     }
     else
     {
-      BotaoProximo.IsVisible = true;
-      ClicaButao1.IsVisible = false;
-      ClicaButao2.IsVisible = false;
-      ClicaButao3.IsVisible = false;
+      ButaofunfaProximo.IsVisible = false;
+      Butaofunfa1.IsVisible = true;
+      
+      Butaofunfa3.IsVisible = true;
     }
   }
 //------------------------------------------------------------------------------------------------\\
@@ -70,38 +109,37 @@ public partial class PlayPage : ContentPage
   {
     historiaatual = historia.Where(d=> d.Id == id).First();
     PreencherPagina();
-  }
+  };
 
 //------------------------------------------------------------------------------------------------\\
 
-  void ButaofunfaProximo(object sender, EventArgs args)
+  void ClicaButao0(object sender, EventArgs args)
   {
     var proximoId = historiaatual.Id + 1;
     TrocaHistoryStepAtual(proximoId);
-  }
+  };
 
 //------------------------------------------------------------------------------------------------\\
 
-  void Butaofunfa1(object sender, EventArgs args)
+  void ClicaButao1(object sender, EventArgs args)
   {
     TrocaHistoryStepAtual(historiaatual.Resposta0);
   }
 
 //------------------------------------------------------------------------------------------------\\
 
-  void Butaofunfa2(object sender, EventArgs args)
+  void ClicaButao2(object sender, EventArgs args)
   {
     TrocaHistoryStepAtual(historiaatual.Resposta1);
   }
 
 //------------------------------------------------------------------------------------------------\\
 
-  void Butaofunfa3(object sender, EventArgs args)
+  void ClicaButao3(object sender, EventArgs args)
   {
     TrocaHistoryStepAtual(historiaatual.Resposta2);
   }
 
 //------------------------------------------------------------------------------------------------\\
-  
 	}
 }
