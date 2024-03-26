@@ -42,8 +42,7 @@
                />
         
         <Label x:Name="OTextoDoJogo"
-               Text="oi"
-               FontSize="38"
+               FontSize="18"
                BackgroundColor="Grey"
                Grid.Row="1"               
                Margin="10"/>
@@ -68,8 +67,7 @@
         </Frame>
 <!--===========================================================================================================-->
         <Button x:Name="ButaofunfaProximo"
-                
-                Clicked="clicanoproximo"
+                Clicked="ClicaNoProximo"
                 Grid.Row="2"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
@@ -77,20 +75,17 @@
 
         <Button x:Name="Butaofunfa1"
                 Clicked="ClicaButao1"
-                
                 Grid.Row="3"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
         <Button x:Name="Butaofunfa2"
-                
                 Clicked="ClicaButao2"
                 Grid.Row="4"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
 
         <Button x:Name="Butaofunfa3"
-                
                 Clicked="ClicaButao3"
                 Grid.Row="5"
                 Grid.ColumnSpan="3"

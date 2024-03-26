@@ -15,53 +15,99 @@ public partial class PlayPage : ContentPage
 		InitializeComponent();
 
     
-//------------------------------------------------------------------------------------------------\\
-	historia.Add(new HistoriaTFR()
+    //------------------------------------------------------------------------------------------------\\
+	  historia.Add(new HistoriaTFR()
     {
       Id = 0,
-      Texto = "caramba",
-      Aresposta=false
+      Texto = "eai detetive, como etá? precisamos da sua ajuda para solucionar um caso, podemos contar com você?",
+      TextoR0 = "pó deixar com o pai",
+      TextoR1 = "não to já fazendo uns paranaue",
+      Resposta0 = 1,
+      Resposta1 = -1,
+      Aresposta=true
     });
 
     historia.Add(new HistoriaTFR()
     {
       Id = 1,
-      Texto = "caramjiiniba",
-      TextoR0 = "jorijv khbnvk",
-      TextoR1 = "jorgtrh6j7kmnyhtbt6k8khbnvk",
-      TextoR2 = "johgfrtfdxesdfcxszesrdtf",
+      Texto = "bom, então vamos começar vendo as pistas que obtemos, escolha uma",
+      TextoR0 = "(faca com sangue)",
+      TextoR1 = "(testemunha)",
+      TextoR2 = "(camera)",
 
-      Resposta0 = 10000,
-      Resposta1 = 1999,
-      Resposta2 = 20000,
+      Resposta0 = 2,
+      Resposta1 = 3,
+      Resposta2 = 4,
 
       Aresposta=true
     });
+
     historia.Add(new HistoriaTFR()
     {
-      Id = 10000,
-      JogadorF = true,
+      Id = 2,
+      Texto = "não foi encontrado nem uma digital ou DNA do assasino",
+      TextoR0 = "(ver as outras pistas)",
 
-      Aresposta=false
+      Resposta0 = 1,
+
+      Aresposta=true
     });
 
     historia.Add(new HistoriaTFR()
     {
-      Id = 1999,
-      JogadorF = true,
+      Id = 4,
+      Texto = "a camera não funciona",
+      TextoR0 = "(ver as outras pistas)",
 
-      Aresposta=false
+      Resposta0 = 1,
+
+      Aresposta=true
     });
 
     historia.Add(new HistoriaTFR()
     {
-      Id = 20000,
-      JogadorF = true,
+      Id = 3,
+      Texto = "*(você) boa noite, oque você viu me fale                                *(vitima) eu vi um cara um pouco maior que eu brigando com uma mulher eles estávão gritando um com o outro estávão falando",
+      TextoR0 = "(você) oque estavão falando?",
+ 
 
-      Aresposta=false
+      Resposta0 = 2,
+      Resposta1 = 3,
+      Resposta2 = 4,
+
+      Aresposta=true
     });
 
-//------------------------------------------------------------------------------------------------\\
+
+    
+
+    //=========================================================================================\\
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = -1,
+      JogadorF = true,
+      Resposta0 = 0
+    });
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = -2,
+      JogadorF = true,
+      Resposta0 = 0
+    });
+    
+    historia.Add(new HistoriaTFR()
+    {
+      Id = -3,
+      JogadorF = true,
+      Resposta0 = 0
+    });
+
+    Iniciar();
+  }
+
+  //------------------------------------------------------------------------------------------------\\
 	void Iniciar()
   {
     TrocaHistoryStepAtual(0);
@@ -84,21 +130,21 @@ public partial class PlayPage : ContentPage
 
     if (historiaatual.Aresposta)
     {
-      ButaofunfaProximo.IsVisible = true;
-      Butaofunfa1.IsVisible = false;
-      Butaofunfa2.IsVisible = false;
-      Butaofunfa3.IsVisible = false;
-
-      Butaofunfa1.Text = historiaatual.TextoR0;
-      Butaofunfa2.Text = historiaatual.TextoR0;
-      Butaofunfa3.Text = historiaatual.TextoR2;
-    }
-    else
-    {
       ButaofunfaProximo.IsVisible = false;
       Butaofunfa1.IsVisible = true;
       Butaofunfa2.IsVisible = true;
       Butaofunfa3.IsVisible = true;
+
+      Butaofunfa1.Text = historiaatual.TextoR0;
+      Butaofunfa2.Text = historiaatual.TextoR1;
+      Butaofunfa3.Text = historiaatual.TextoR2;
+    }
+    else
+    {
+      ButaofunfaProximo.IsVisible = true;
+      Butaofunfa1.IsVisible = false;
+      Butaofunfa2.IsVisible = false;
+      Butaofunfa3.IsVisible = false;
     }
   }
 //------------------------------------------------------------------------------------------------\\
@@ -109,15 +155,15 @@ public partial class PlayPage : ContentPage
   {
     historiaatual = historia.Where(d=> d.Id == id).First();
     PreencherPagina();
-  };
+  }
 
 //------------------------------------------------------------------------------------------------\\
 
-  void clicanoproximo(object sender, EventArgs args)
+  void ClicaNoProximo(object sender, EventArgs args)
   {
     var proximoId = historiaatual.Id + 1;
     TrocaHistoryStepAtual(proximoId);
-  };
+  }
 
 //------------------------------------------------------------------------------------------------\\
 
@@ -140,7 +186,6 @@ public partial class PlayPage : ContentPage
     TrocaHistoryStepAtual(historiaatual.Resposta2);
   }
 
-  Iniciar();
+  
 //------------------------------------------------------------------------------------------------\\
-	}
 }
