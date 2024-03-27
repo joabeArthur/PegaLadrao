@@ -36,15 +36,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <Label BackgroundColor="Black"
-               Grid.Row="0"
-               />
         
         <Label x:Name="OTextoDoJogo"
                FontSize="18"
                BackgroundColor="Grey"
-               Grid.Row="1"               
+               Grid.RowSpan="2"               
                Margin="10"/>
          </Grid>
         </Frame>
@@ -53,7 +49,7 @@
                Grid.RowSpan="2"
                IsVisible="false"
                Grid.ColumnSpan="3"
-               BackgroundColor="red">
+               >
           
           <Grid>
                 <Grid.RowDefinitions>
@@ -62,16 +58,20 @@
                 </Grid.RowDefinitions>
 
                 <Label Text="CABO FI"
-                       BackgroundColor="purple"/>
+                       BackgroundColor="Black"
+                       HorizontalOptions="Center"
+                       FontSize="50"
+                       TextColor="Red"/>
           </Grid>
         </Frame>
 <!--===========================================================================================================-->
         <Button x:Name="ButaofunfaProximo"
+                Text="Póximo"
                 Clicked="ClicaNoProximo"
                 Grid.Row="2"
                 Grid.ColumnSpan="3"
                 Margin="10"/>
-
+ 
 
         <Button x:Name="Butaofunfa1"
                 Clicked="ClicaButao1"

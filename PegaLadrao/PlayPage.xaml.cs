@@ -67,21 +67,89 @@ public partial class PlayPage : ContentPage
     historia.Add(new HistoriaTFR()
     {
       Id = 3,
-      Texto = "*(você) boa noite, oque você viu me fale                                *(vitima) eu vi um cara um pouco maior que eu brigando com uma mulher eles estávão gritando um com o outro estávão falando",
-      TextoR0 = "(você) oque estavão falando?",
+      Texto = "*(você) boa noite, oque você viu me fale                                *(testemunha) eu vi um cara um pouco maior que eu brigando com uma mulher eles estavam gritando um com o outro estavam falando sobre pacotes",
+      TextoR0 = "(você) oque estavão falando mais especificamente?",
  
 
-      Resposta0 = 2,
-      Resposta1 = 3,
-      Resposta2 = 4,
+      Resposta0 = 5,
+      Aresposta=true
+    });
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 5,
+      Texto = "*(testemunha) parecia que o homem ficou irritado com a mulher porque ela deu os pacotes pra pessoa errada",
+      TextoR0 = "*(você) você consegiu ver como era esse pacote?",
+ 
+
+      Resposta0 = 6,
 
       Aresposta=true
     });
 
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 6,
+      Texto = "*(testemunha) sim parecia um pó branco",
 
-    
+      TextoR0 = "*(você) você lembra de mais alguma coisa?",
+      TextoR1 = "*(você) muito obrigado pela ajuda.",
+      TextoR2 = "(dar um soco na testemunha e gritar (MENTIROSO!!!))",
+ 
 
-    //=========================================================================================\\
+      Resposta0 = 7,
+      Resposta1 = -100,
+      Resposta2 = 8,
+
+      Aresposta=true
+    });
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 7,
+      Texto = "*(testemunha) não lembro de mais nada",
+
+      TextoR0 = "*(você) muito obrigado pela ajuda",
+      TextoR1 = "(dar um soco na testemunha e gritar (mentirosa!!!))",
+ 
+
+      Resposta0 = -100,
+      Resposta1 = 8,
+
+      Aresposta=true
+    });
+    //======================================caminho pra do mal===================================================\\
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = 8,
+      Texto = "*(testemunha) AJUDA!!! AJUDA!!! AJUDA!!!",
+
+      TextoR0 = "(colocar a arma na cara dele e falar (eu vou te matar se você não falar a verdade))",
+      TextoR1 = "(pedir desculpas)",
+ 
+
+      Resposta0 = 2,
+
+      Aresposta=true
+    });
+
+    //======================================caminho pra do bem===================================================\\
+
+    historia.Add(new HistoriaTFR()
+    {
+      Id = -100,
+      Texto = "(você segue para a delegacia)",
+
+      TextoR0 = "*(você) o quero falar com o criminoso",//não tenho certeza se é essa palavra
+ 
+
+      Resposta0 = 2,
+
+      Aresposta=true
+    });
+
+    //=============================================perdeu============================================\\
 
     historia.Add(new HistoriaTFR()
     {
